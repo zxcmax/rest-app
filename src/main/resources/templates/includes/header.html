@@ -1,0 +1,12 @@
+<header>
+    <nav class="navbar bg-dark p-1">
+        <div class="container-fluid d-flex justify-content-between">
+        <span>
+            <b class="text-white" th:text="${#authentication.name}"></b>
+            <span class="text-white">with roles: <span th:each="auth : ${#authentication.authorities}"
+                                                       th:text="${#strings.replace(auth.authority, 'ROLE_', '') + ' '}"></span></span>
+        </span>
+            <a class="btn btn-link text-white-50 text-decoration-none" th:href="@{/logout}">Logout</a>
+        </div>
+    </nav>
+</header>
